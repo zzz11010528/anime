@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.community.mapper.NotificationMapper">
+
+    <!-- 分页查询通知列表 -->
+    <select id="selectNotificationPage" resultType="com.community.vo.NotificationVO">
+        SELECT
+            n.id,
+            n.user_id,
+            n.type,
+            n.target_id,
+            n.content,
+            n.is_read,
+            n.created_at,
+            CASE
+                WHEN n.type = 1 THEN (SELECT user_id FROM `like` WHERE id = n.target_id)
+                WHEN n.type = 2 THEN (SELECT user_id FROM comment WHERE id = n.target_id)
+                WHEN n.type = 3 THEN (SELECT user_id FROM comment WHERE id = n.target_id)
+                ELSE NULL
+            END AS operate_user_id,
+            u.username AS operate_username,
+            u.nickname AS operate_nickname,
+            u.avatar AS operate_avatar,
+            CASE
+                WHEN n.type = 1 AND (SELECT type FROM `like` WHERE id = n.target_id) = 1 THEN (SELECT title FROM post WHERE id = (SELECT target_id FROM `like` WHERE id = n.target_id))
+                WHEN n.type = 1 AND (SELECT type FROM `like` WHERE id = n.target_id) = 2 THEN (SELECT content FROM comment WHERE id = (SELECT target_id FROM `like` WHERE id = n.target_id))
+                WHEN n.type = 2 THEN (SELECT title FROM post WHERE id = (SELECT post_id FROM comment WHERE id = n.target_id))
+                WHEN n.type = 3 THEN (SELECT content FROM comment WHERE id = (SELECT parent_id FROM comment WHERE id = n.target_id))
+                ELSE NULL
+            END AS target_title
+        FROM
+            notification n
+        LEFT JOIN user u ON u.id = CASE
+            WHEN n.type = 1 THEN (SELECT user_id FROM `like` WHERE id = n.target_id)
+            WHEN n.type = 2 THEN (SELECT user_id FROM comment WHERE id = n.target_id)
+            WHEN n.type = 3 THEN (SELECT user_id FROM comment WHERE id = n.target_id)
+            ELSE NULL
+        END
+        WHERE
+            n.user_id = #{userId}
+            <if test="type != null">
+                AND n.type = #{type}
+            </if>
+        ORDER BY
+            n.created_at DESC
+    </select>
+
+    <!-- 获取未读通知数量 -->
+    <select id="selectUnreadCount" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            notification
+        WHERE
+            user_id = #{userId}
+            AND is_read = 0
+            <if test="type != null">
+                AND type = #{type}
+            </if>
+    </select>
+
+</mapper>

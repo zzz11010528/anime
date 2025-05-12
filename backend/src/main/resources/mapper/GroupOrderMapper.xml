@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.community.mapper.GroupOrderMapper">
+
+    <!-- 获取拼团订单详情 -->
+    <select id="selectGroupOrderDetail" resultType="com.community.vo.GroupOrderVO">
+        SELECT
+            go.id,
+            go.group_buying_id,
+            go.leader_user_id,
+            u.username AS leader_username,
+            u.nickname AS leader_nickname,
+            u.avatar AS leader_avatar,
+            go.current_size,
+            go.status,
+            go.expire_time,
+            go.created_at,
+            go.updated_at,
+            gb.product_id,
+            p.name AS product_name,
+            p.main_image AS product_image,
+            p.price AS product_price,
+            gb.group_price,
+            gb.min_group_size
+        FROM
+            group_order go
+        LEFT JOIN user u ON go.leader_user_id = u.id
+        LEFT JOIN group_buying gb ON go.group_buying_id = gb.id
+        LEFT JOIN product p ON gb.product_id = p.id
+        WHERE
+            go.id = #{id}
+    </select>
+
+    <!-- 获取拼团中的订单列表 -->
+    <select id="selectGroupingOrders" resultType="com.community.vo.GroupOrderVO">
+        SELECT
+            go.id,
+            go.group_buying_id,
+            go.leader_user_id,
+            u.username AS leader_username,
+            u.nickname AS leader_nickname,
+            u.avatar AS leader_avatar,
+            go.current_size,
+            go.status,
+            go.expire_time,
+            go.created_at,
+            go.updated_at,
+            gb.product_id,
+            p.name AS product_name,
+            p.main_image AS product_image,
+            p.price AS product_price,
+            gb.group_price,
+            gb.min_group_size
+        FROM
+            group_order go
+        LEFT JOIN user u ON go.leader_user_id = u.id
+        LEFT JOIN group_buying gb ON go.group_buying_id = gb.id
+        LEFT JOIN product p ON gb.product_id = p.id
+        WHERE
+            go.group_buying_id = #{groupBuyingId}
+            AND go.status = 0
+        ORDER BY go.created_at DESC
+    </select>
+
+    <!-- 获取已成团的订单列表 -->
+    <select id="selectGroupedOrders" resultType="com.community.vo.GroupOrderVO">
+        SELECT
+            go.id,
+            go.group_buying_id,
+            go.leader_user_id,
+            u.username AS leader_username,
+            u.nickname AS leader_nickname,
+            u.avatar AS leader_avatar,
+            go.current_size,
+            go.status,
+            go.expire_time,
+            go.created_at,
+            go.updated_at,
+            gb.product_id,
+            p.name AS product_name,
+            p.main_image AS product_image,
+            p.price AS product_price,
+            gb.group_price,
+            gb.min_group_size
+        FROM
+            group_order go
+        LEFT JOIN user u ON go.leader_user_id = u.id
+        LEFT JOIN group_buying gb ON go.group_buying_id = gb.id
+        LEFT JOIN product p ON gb.product_id = p.id
+        WHERE
+            go.group_buying_id = #{groupBuyingId}
+            AND go.status = 1
+        ORDER BY go.updated_at DESC
+    </select>
+
+    <!-- 统计拼团活动的拼团中订单数量 -->
+    <select id="countGroupingOrders" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            group_order
+        WHERE
+            group_buying_id = #{groupBuyingId}
+            AND status = 0
+    </select>
+
+    <!-- 统计拼团活动的已成团订单数量 -->
+    <select id="countGroupedOrders" resultType="int">
+        SELECT
+            COUNT(*)
+        FROM
+            group_order
+        WHERE
+            group_buying_id = #{groupBuyingId}
+            AND status = 1
+    </select>
+
+    <!-- 获取用户参与的拼团订单列表 -->
+    <select id="selectUserGroupOrders" resultType="com.community.vo.GroupOrderVO">
+        SELECT DISTINCT
+            go.id,
+            go.group_buying_id,
+            go.leader_user_id,
+            u.username AS leader_username,
+            u.nickname AS leader_nickname,
+            u.avatar AS leader_avatar,
+            go.current_size,
+            go.status,
+            go.expire_time,
+            go.created_at,
+            go.updated_at,
+            gb.product_id,
+            p.name AS product_name,
+            p.main_image AS product_image,
+            p.price AS product_price,
+            gb.group_price,
+            gb.min_group_size
+        FROM
+            group_order go
+        LEFT JOIN user u ON go.leader_user_id = u.id
+        LEFT JOIN group_buying gb ON go.group_buying_id = gb.id
+        LEFT JOIN product p ON gb.product_id = p.id
+        INNER JOIN `order` o ON o.group_order_id = go.id
+        WHERE
+            (go.leader_user_id = #{userId} OR o.user_id = #{userId})
+            <if test="status != null">
+                AND go.status = #{status}
+            </if>
+        ORDER BY
+            CASE WHEN go.status = 0 THEN 0 ELSE 1 END,
+            go.created_at DESC
+    </select>
+
+</mapper>

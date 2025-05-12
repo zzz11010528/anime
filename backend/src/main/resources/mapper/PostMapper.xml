@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.community.mapper.PostMapper">
+
+    <!-- 分页查询帖子列表 -->
+    <select id="selectPostPage" resultType="com.community.vo.PostVO">
+        SELECT
+            p.id,
+            p.user_id,
+            u.username,
+            u.nickname,
+            u.avatar,
+            p.category_id,
+            cc.name AS category_name,
+            p.ip_id,
+            i.name AS ip_name,
+            p.title,
+            p.content,
+            p.view_count,
+            p.like_count,
+            p.comment_count,
+            p.collect_count,
+            p.status,
+            p.created_at,
+            p.updated_at
+        FROM
+            post p
+        LEFT JOIN user u ON p.user_id = u.id
+        LEFT JOIN community_category cc ON p.category_id = cc.id
+        LEFT JOIN ip i ON p.ip_id = i.id
+        <where>
+            <if test="status != null">
+                p.status = #{status}
+            </if>
+            <if test="categoryId != null and categoryId > 0">
+                AND p.category_id = #{categoryId}
+            </if>
+            <if test="ipId != null and ipId > 0">
+                AND p.ip_id = #{ipId}
+            </if>
+            <if test="keyword != null and keyword != ''">
+                AND (p.title LIKE CONCAT('%', #{keyword}, '%') OR p.content LIKE CONCAT('%', #{keyword}, '%'))
+            </if>
+            <if test="userId != null and userId > 0">
+                AND p.user_id = #{userId}
+            </if>
+        </where>
+        <choose>
+            <when test="orderBy != null and orderBy != ''">
+                <choose>
+                    <when test="orderBy == 'view_count'">
+                        ORDER BY p.view_count
+                    </when>
+                    <when test="orderBy == 'like_count'">
+                        ORDER BY p.like_count
+                    </when>
+                    <when test="orderBy == 'comment_count'">
+                        ORDER BY p.comment_count
+                    </when>
+                    <when test="orderBy == 'collect_count'">
+                        ORDER BY p.collect_count
+                    </when>
+                    <otherwise>
+                        ORDER BY p.created_at
+                    </otherwise>
+                </choose>
+                <choose>
+                    <when test="isAsc != null and isAsc">
+                        ASC
+                    </when>
+                    <otherwise>
+                        DESC
+                    </otherwise>
+                </choose>
+            </when>
+            <otherwise>
+                ORDER BY p.created_at DESC
+            </otherwise>
+        </choose>
+    </select>
+
+    <!-- 获取帖子详情 -->
+    <select id="selectPostDetail" resultType="com.community.vo.PostVO">
+        SELECT
+            p.id,
+            p.user_id,
+            u.username,
+            u.nickname,
+            u.avatar,
+            p.category_id,
+            cc.name AS category_name,
+            p.ip_id,
+            i.name AS ip_name,
+            p.title,
+            p.content,
+            p.view_count,
+            p.like_count,
+            p.comment_count,
+            p.collect_count,
+            p.status,
+            p.created_at,
+            p.updated_at
+        FROM
+            post p
+        LEFT JOIN user u ON p.user_id = u.id
+        LEFT JOIN community_category cc ON p.category_id = cc.id
+        LEFT JOIN ip i ON p.ip_id = i.id
+        WHERE
+            p.id = #{id}
+    </select>
+
+    <!-- 根据ID列表查询帖子列表 -->
+    <select id="selectPostsByIds" resultType="com.community.vo.PostVO">
+        SELECT
+            p.id,
+            p.user_id,
+            u.username,
+            u.nickname,
+            u.avatar,
+            p.category_id,
+            cc.name AS category_name,
+            p.ip_id,
+            i.name AS ip_name,
+            p.title,
+            p.content,
+            p.view_count,
+            p.like_count,
+            p.comment_count,
+            p.collect_count,
+            p.status,
+            p.created_at,
+            p.updated_at
+        FROM
+            post p
+        LEFT JOIN user u ON p.user_id = u.id
+        LEFT JOIN community_category cc ON p.category_id = cc.id
+        LEFT JOIN ip i ON p.ip_id = i.id
+        WHERE
+            p.status = 1
+            AND p.id IN
+            <foreach collection="postIds" item="id" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+        ORDER BY p.created_at DESC
+    </select>
+
+</mapper>

@@ -1,0 +1,105 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: anime-community
+  # 开发工具配置
+  devtools:
+    restart:
+      enabled: true  # 启用热部署
+      additional-paths: src/main/java # 设置重启的目录
+      exclude: static/**,public/**,WEB-INF/**  # 设置不需要重启的目录
+  # 数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.122.118.192:3306/anime_community_db?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: root
+    password: Root@123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 初始连接数
+      initialSize: 5
+      # 最小连接池数量
+      minIdle: 10
+      # 最大连接池数量
+      maxActive: 20
+      # 配置获取连接等待超时的时间
+      maxWait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      # 配置一个连接在池中最大生存的时间，单位是毫秒
+      maxEvictableIdleTimeMillis: 900000
+      # 配置检测连接是否有效
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+
+  # Redis配置
+  redis:
+    host: 47.122.118.192
+    port: 6379
+    database: 5
+    password: 272338wzl
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+
+  # 文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+# MyBatis Plus配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.community.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# Sa-Token配置
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: Authorization
+  # token有效期，单位s 默认30天, -1代表永不过期
+  timeout: 2592000
+  # token临时有效期 (指定时间内无操作就过期) 单位: 秒
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: false
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: false
+
+# 项目自定义配置
+community:
+  # 上传文件保存路径
+  file-upload-path: D:/document/aa_bs/upload/
+  # 支付宝配置
+  alipay:
+    app-id: 2021000148612880
+    private-key: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCIC8hz/y3qMIi/unW3Ft7MzuPYUSeR0Wxs5BEL9iNXCmqNCxC5zGl8PKyY3QnEoE/3Sa808obdRSTLbfkEYGBLiy1vuC9riJHb1NSnWmxgzElhplS4GFUdSp16qjL2kdvj8bHFQvP79i+lugfjgu3LtSiNa7JRkxdkOXye61gZiTWtYFHvJ9NJ4R5aOs4s6uW3djRC1AAeHy5nFTVZwArHHdMqYCf642OgIcB8ip2lM6A1PUWcZ0DcaLBXc15oN94LngN9JK24nBH8C8C8KB7TDV/WwUvkjfVlPbks+DmDYvIPiFP44f11+DtEgZEIBRUyy5QFoTHsTb/9poNmxb/fAgMBAAECggEACQR+7PFlIbjF16+MTe5+JiUwhQ4cCVZQUYdsedZ+0S4nkeHB4g7ijxGWfytnkljt8/42VtQcjF4g6jsH3npk55z6DgWvXvlWcbPRxKYBuQjRdF+KDgnO2novpgnSBvX0FU/X8LNXaMQQtHN4QmRTTsVbQsR4tV+ClWoaEI6Y8FhHMNjAedkbVYbj9efspe0n0wzcWAFeATpyb0bhTn5va1FWCfkKK+BCLoU5vfcaYKk6/erqW4pIH5DJw3EwfUMViMvjbOXlpIpZi036VkSxKZmPtfelt90g0fhXdxHy17Y1spcEOICCwGYLZkmAnhZ84jsm2slK5/G4DVF1MrDkAQKBgQC8NGlR8360jL40xEQlzSs6s3LO36PFyK9lc734F9z8oF6517XmWd/Q1Ruc2QARVT5Y0tNDuBOz4KSOpJcBjbrZLceLKEXPV+yHhrIffCd9qsp2C8r8GHQdNTqwr3P5Op8oVHLwvie4moV2Uu7XjEI/S2cFnnyRaJAs5urJkuNCHwKBgQC5DXn8h5bmPqfGalxXaRJOIH7z85amnYrp2c4C86QA2OlzLQDChJVeD+Qt0qMLJck34Gp2bqkjvXr6UZErcSSxMLrgegmfDx/cKIf4sLzGCAq7njY2XhWPovp2X7tMcbgngNEYxJXGdCcc2bYl8TTApWMT8jatpHhFWwFaWWtKQQKBgFxZY2yhDIVPom2F+OKLoDC3qRg1yMjeRqKDfq3kF72me5S5cjpL03VHfLskB9J5f5RaLuxFwPU8v8J2pNpQT2UN/6Ia6tZpEFkYEQM+CqqxSZNPChVVcnR6kAfur/uVdk910MisphUBTYfX/faqjj88opqxP/Kh2k0OKhsrBnSFAoGAEGNtJjwr1QA/g4bv3p3jjR+7noc4FFFneAZeBEznfVu4cQbPRmrPf6EQqC47WkViaJxrUUnDmPKy7XBD1wESKs8R/cdRCtEgFTNRt2iPj0ovCSadznrOlgXtAIbB46c+k+EIo5TlXsnynM97HikabuU2vRF6Xi5uqFXC7Ol2YwECgYAcIsE8S9fxA5Jl89Bp6X0tuhVOJ94qHCA398pr75gf0OO+IVE7st6QaPL/6mat/oEV/m0Wb0f05xmj9CjYBlYXxLgzVTjuIjTEmBm/opdKaRs2WTNQAgaZqdyIzPhc4+f0Izyl/9Ue5Wg6su38GU2UT5iEnpQXXu3oeMwpghqGeA==
+    alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApJf6MTirR0m8sr11ASGnBZQ/LN6gW+BvKALCmzQvqJHCd1y1rHCgLpXCSGDXj2W2+VFh6Yx2SQ0xUXoekxEmc3BfoDxHubFFI6vvUmeXXi7PsjTWFb00e5PBOkUdbsm3LvCkvzWSomycuD4/tMYDhLwoVuiaTahj0wxCF5KUeiSDajsXqfSQDnhrVwpDC8Chez1ax5YZRjBTX7NfrMY9C5Vm9PQURE6slLuIb61dXYdij6jCmY5Vft7iCsVUuwwVtvCxKKrNn3LAkJCNi8pLeRzWaejlAoY1uQdSpdwjItJbphLfv2gqW/dweZCuVIBS8dhx8CAC4ktqtDoTUOcrQQIDAQAB
+    notify-url: http://localhost:8080/api/pay/notify
+    return-url: http://localhost:8080/api/pay/return
+    gateway-url: https://openapi-sandbox.dl.alipaydev.com/gateway.do

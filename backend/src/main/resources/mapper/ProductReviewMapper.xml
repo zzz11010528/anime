@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.community.mapper.ProductReviewMapper">
+
+    <!-- 分页查询商品评价列表 -->
+    <select id="selectProductReviewPage" resultType="com.community.vo.ProductReviewVO">
+        SELECT
+            pr.id,
+            pr.user_id,
+            u.username,
+            u.nickname,
+            u.avatar,
+            pr.product_id,
+            p.name AS product_name,
+            pr.order_id,
+            pr.order_item_id,
+            pr.content,
+            pr.rating,
+            pr.status,
+            pr.created_at,
+            pr.updated_at,
+            (
+                SELECT GROUP_CONCAT(pri.image_url ORDER BY pri.sort ASC SEPARATOR ',')
+                FROM product_review_image pri
+                WHERE pri.review_id = pr.id
+            ) AS images_concat
+        FROM
+            product_review pr
+        LEFT JOIN
+            user u ON pr.user_id = u.id
+        LEFT JOIN
+            product p ON pr.product_id = p.id
+        <where>
+            pr.status = 1
+            <if test="productId != null">
+                AND pr.product_id = #{productId}
+            </if>
+            <if test="userId != null">
+                AND pr.user_id = #{userId}
+            </if>
+        </where>
+        ORDER BY
+            pr.created_at DESC
+    </select>
+
+    <!-- 获取评价详情 -->
+    <select id="selectProductReviewDetail" resultType="com.community.vo.ProductReviewVO">
+        SELECT
+            pr.id,
+            pr.user_id,
+            u.username,
+            u.nickname,
+            u.avatar,
+            pr.product_id,
+            p.name AS product_name,
+            pr.order_id,
+            pr.order_item_id,
+            pr.content,
+            pr.rating,
+            pr.status,
+            pr.created_at,
+            pr.updated_at,
+            (
+                SELECT GROUP_CONCAT(pri.image_url ORDER BY pri.sort ASC SEPARATOR ',')
+                FROM product_review_image pri
+                WHERE pri.review_id = pr.id
+            ) AS images_concat
+        FROM
+            product_review pr
+        LEFT JOIN
+            user u ON pr.user_id = u.id
+        LEFT JOIN
+            product p ON pr.product_id = p.id
+        WHERE
+            pr.id = #{id}
+            AND pr.status = 1
+    </select>
+
+</mapper>

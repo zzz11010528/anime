@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.community.mapper.GroupBuyingMapper">
+
+    <!-- 分页查询拼团活动列表 -->
+    <select id="selectGroupBuyingPage" resultType="com.community.vo.GroupBuyingVO">
+        SELECT
+            gb.id,
+            gb.product_id,
+            p.name AS product_name,
+            p.main_image AS product_image,
+            p.price AS product_price,
+            gb.group_price,
+            gb.min_group_size,
+            gb.max_group_size,
+            gb.start_time,
+            gb.end_time,
+            gb.status,
+            gb.created_at,
+            gb.updated_at,
+            (SELECT COUNT(*) FROM group_order go WHERE go.group_buying_id = gb.id AND go.status = 0) AS grouping_count,
+            (SELECT COUNT(*) FROM group_order go WHERE go.group_buying_id = gb.id AND go.status = 1) AS grouped_count
+        FROM
+            group_buying gb
+        LEFT JOIN product p ON gb.product_id = p.id
+        <where>
+            <if test="sellerId != null">
+                p.user_id = #{sellerId}
+            </if>
+            <if test="keyword != null and keyword != ''">
+                AND p.name LIKE CONCAT('%', #{keyword}, '%')
+            </if>
+            <if test="status != null">
+                AND gb.status = #{status}
+            </if>
+        </where>
+        ORDER BY gb.created_at DESC
+    </select>
+
+    <!-- 获取拼团活动详情 -->
+    <select id="selectGroupBuyingDetail" resultType="com.community.vo.GroupBuyingVO">
+        SELECT
+            gb.id,
+            gb.product_id,
+            p.name AS product_name,
+            p.main_image AS product_image,
+            p.price AS product_price,
+            gb.group_price,
+            gb.min_group_size,
+            gb.max_group_size,
+            gb.start_time,
+            gb.end_time,
+            gb.status,
+            gb.created_at,
+            gb.updated_at,
+            (SELECT COUNT(*) FROM group_order go WHERE go.group_buying_id = gb.id AND go.status = 0) AS grouping_count,
+            (SELECT COUNT(*) FROM group_order go WHERE go.group_buying_id = gb.id AND go.status = 1) AS grouped_count
+        FROM
+            group_buying gb
+        LEFT JOIN product p ON gb.product_id = p.id
+        WHERE
+            gb.id = #{id}
+    </select>
+
+</mapper>

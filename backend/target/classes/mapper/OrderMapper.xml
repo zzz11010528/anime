@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.community.mapper.OrderMapper">
+
+    <!-- 分页查询订单列表 -->
+    <select id="selectOrderPage" resultMap="orderVOMap">
+        SELECT
+            o.id,
+            o.order_no,
+            o.user_id,
+            u.username,
+            u.nickname,
+            o.seller_id,
+            s.username AS seller_username,
+            s.nickname AS seller_nickname,
+            o.total_amount,
+            o.pay_amount,
+            o.pay_type,
+            o.status,
+            o.shipping_name,
+            o.shipping_phone,
+            o.shipping_address,
+            o.payment_time,
+            o.shipping_time,
+            o.receive_time,
+            o.close_time,
+            o.group_order_id,
+            o.created_at,
+            o.updated_at
+        FROM
+            `order` o
+        LEFT JOIN user u ON o.user_id = u.id
+        LEFT JOIN user s ON o.seller_id = s.id
+        <where>
+            <if test="userId != null">
+                o.user_id = #{userId}
+            </if>
+            <if test="status != null">
+                AND o.status = #{status}
+            </if>
+        </where>
+        ORDER BY o.created_at DESC
+    </select>
+
+    <!-- 订单VO结果映射 -->
+    <resultMap id="orderVOMap" type="com.community.vo.OrderVO">
+        <id property="id" column="id"/>
+        <result property="orderNo" column="order_no"/>
+        <result property="userId" column="user_id"/>
+        <result property="username" column="username"/>
+        <result property="nickname" column="nickname"/>
+        <result property="avatar" column="avatar"/>
+        <result property="sellerId" column="seller_id"/>
+        <result property="sellerUsername" column="seller_username"/>
+        <result property="sellerNickname" column="seller_nickname"/>
+        <result property="totalAmount" column="total_amount"/>
+        <result property="payAmount" column="pay_amount"/>
+        <result property="payType" column="pay_type"/>
+        <result property="status" column="status"/>
+        <result property="shippingName" column="shipping_name"/>
+        <result property="shippingPhone" column="shipping_phone"/>
+        <result property="shippingAddress" column="shipping_address"/>
+        <result property="paymentTime" column="payment_time"/>
+        <result property="shippingTime" column="shipping_time"/>
+        <result property="receiveTime" column="receive_time"/>
+        <result property="closeTime" column="close_time"/>
+        <result property="groupOrderId" column="group_order_id"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+        <collection property="orderItems" ofType="com.community.entity.OrderItem" select="selectOrderItems" column="id"/>
+    </resultMap>
+
+    <!-- 查询订单项 -->
+    <select id="selectOrderItems" resultType="com.community.entity.OrderItem">
+        SELECT
+            oi.id,
+            oi.order_id,
+            oi.product_id,
+            p.name AS product_name,
+            p.main_image AS product_image,
+            oi.price,
+            oi.quantity,
+            (CASE WHEN pr.id IS NOT NULL THEN 1 ELSE 0 END) AS reviewed
+        FROM
+            order_item oi
+        LEFT JOIN product p ON oi.product_id = p.id
+        LEFT JOIN product_review pr ON pr.order_item_id = oi.id AND pr.status = 1
+        WHERE
+            oi.order_id = #{id}
+    </select>
+
+    <!-- 获取订单详情 -->
+    <select id="selectOrderDetail" resultMap="orderVOMap">
+        SELECT
+            o.id,
+            o.order_no,
+            o.user_id,
+            u.username,
+            u.nickname,
+            o.seller_id,
+            s.username AS seller_username,
+            s.nickname AS seller_nickname,
+            o.total_amount,
+            o.pay_amount,
+            o.pay_type,
+            o.status,
+            o.shipping_name,
+            o.shipping_phone,
+            o.shipping_address,
+            o.payment_time,
+            o.shipping_time,
+            o.receive_time,
+            o.close_time,
+            o.group_order_id,
+            o.created_at,
+            o.updated_at
+        FROM
+            `order` o
+        LEFT JOIN user u ON o.user_id = u.id
+        LEFT JOIN user s ON o.seller_id = s.id
+        WHERE
+            o.id = #{id}
+    </select>
+
+    <!-- 分页查询商家订单列表 -->
+    <select id="selectSellerOrderPage" resultMap="orderVOMap">
+        SELECT
+            o.id,
+            o.order_no,
+            o.user_id,
+            u.username,
+            u.nickname,
+            o.seller_id,
+            s.username AS seller_username,
+            s.nickname AS seller_nickname,
+            o.total_amount,
+            o.pay_amount,
+            o.pay_type,
+            o.status,
+            o.shipping_name,
+            o.shipping_phone,
+            o.shipping_address,
+            o.payment_time,
+            o.shipping_time,
+            o.receive_time,
+            o.close_time,
+            o.group_order_id,
+            o.created_at,
+            o.updated_at
+        FROM
+            `order` o
+        LEFT JOIN user u ON o.user_id = u.id
+        LEFT JOIN user s ON o.seller_id = s.id
+        <where>
+            <if test="sellerId != null">
+                o.seller_id = #{sellerId}
+            </if>
+            <if test="status != null">
+                AND o.status = #{status}
+            </if>
+        </where>
+        ORDER BY o.created_at DESC
+    </select>
+
+    <!-- 分页查询所有订单列表（管理员接口） -->
+    <select id="selectAllOrders" resultMap="orderVOMap">
+        SELECT
+            o.id,
+            o.order_no,
+            o.user_id,
+            u.username,
+            u.nickname,
+            o.seller_id,
+            s.username AS seller_username,
+            s.nickname AS seller_nickname,
+            o.total_amount,
+            o.pay_amount,
+            o.pay_type,
+            o.status,
+            o.shipping_name,
+            o.shipping_phone,
+            o.shipping_address,
+            o.payment_time,
+            o.shipping_time,
+            o.receive_time,
+            o.close_time,
+            o.group_order_id,
+            o.created_at,
+            o.updated_at
+        FROM
+            `order` o
+        LEFT JOIN user u ON o.user_id = u.id
+        LEFT JOIN user s ON o.seller_id = s.id
+        <where>
+            <if test="orderNo != null and orderNo != ''">
+                o.order_no LIKE CONCAT('%', #{orderNo}, '%')
+            </if>
+            <if test="userId != null">
+                AND o.user_id = #{userId}
+            </if>
+            <if test="sellerId != null">
+                AND o.seller_id = #{sellerId}
+            </if>
+            <if test="status != null">
+                AND o.status = #{status}
+            </if>
+        </where>
+        ORDER BY o.created_at DESC
+    </select>
+
+    <!-- 根据拼团订单ID获取订单列表 -->
+    <select id="selectOrdersByGroupOrderId" resultMap="orderVOMap">
+        SELECT
+            o.id,
+            o.order_no,
+            o.user_id,
+            u.username,
+            u.nickname,
+            u.avatar,
+            o.seller_id,
+            s.username AS seller_username,
+            s.nickname AS seller_nickname,
+            o.total_amount,
+            o.pay_amount,
+            o.pay_type,
+            o.status,
+            o.shipping_name,
+            o.shipping_phone,
+            o.shipping_address,
+            o.payment_time,
+            o.shipping_time,
+            o.receive_time,
+            o.close_time,
+            o.group_order_id,
+            o.created_at,
+            o.updated_at
+        FROM
+            `order` o
+        LEFT JOIN user u ON o.user_id = u.id
+        LEFT JOIN user s ON o.seller_id = s.id
+        WHERE
+            o.group_order_id = #{groupOrderId}
+        ORDER BY o.created_at ASC
+    </select>
+
+    <!-- 分页查询商家订单列表（带高级筛选） -->
+    <select id="selectSellerOrdersWithFilter" resultMap="orderVOMap">
+        SELECT
+            o.id,
+            o.order_no,
+            o.user_id,
+            u.username,
+            u.nickname,
+            o.seller_id,
+            s.username AS seller_username,
+            s.nickname AS seller_nickname,
+            o.total_amount,
+            o.pay_amount,
+            o.pay_type,
+            o.status,
+            o.shipping_name,
+            o.shipping_phone,
+            o.shipping_address,
+            o.payment_time,
+            o.shipping_time,
+            o.receive_time,
+            o.close_time,
+            o.group_order_id,
+            o.created_at,
+            o.updated_at
+        FROM
+            `order` o
+        LEFT JOIN user u ON o.user_id = u.id
+        LEFT JOIN user s ON o.seller_id = s.id
+        <where>
+            <if test="sellerId != null">
+                o.seller_id = #{sellerId}
+            </if>
+            <if test="orderNo != null and orderNo != ''">
+                AND o.order_no LIKE CONCAT('%', #{orderNo}, '%')
+            </if>
+            <if test="customerInfo != null and customerInfo != ''">
+                AND (u.username LIKE CONCAT('%', #{customerInfo}, '%')
+                    OR u.nickname LIKE CONCAT('%', #{customerInfo}, '%')
+                    OR o.shipping_name LIKE CONCAT('%', #{customerInfo}, '%')
+                    OR o.shipping_phone LIKE CONCAT('%', #{customerInfo}, '%'))
+            </if>
+            <if test="status != null">
+                AND o.status = #{status}
+            </if>
+            <if test="startDate != null">
+                AND DATE(o.created_at) >= #{startDate}
+            </if>
+            <if test="endDate != null">
+                AND DATE(o.created_at) &lt;= #{endDate}
+            </if>
+            <if test="minAmount != null">
+                AND o.pay_amount >= #{minAmount}
+            </if>
+            <if test="maxAmount != null">
+                AND o.pay_amount &lt;= #{maxAmount}
+            </if>
+        </where>
+        ORDER BY o.created_at DESC
+    </select>
+
+</mapper>

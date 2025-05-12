@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.community.mapper.CommentMapper">
+
+    <!-- 分页查询评论列表 -->
+    <select id="selectCommentPage" resultType="com.community.vo.CommentVO">
+        SELECT
+            c.id,
+            c.user_id,
+            u.username,
+            u.nickname,
+            u.avatar,
+            c.post_id,
+            c.parent_id,
+            c.reply_user_id,
+            ru.username AS reply_username,
+            ru.nickname AS reply_nickname,
+            c.content,
+            c.like_count,
+            c.status,
+            c.created_at,
+            c.updated_at
+        FROM
+            comment c
+        LEFT JOIN user u ON c.user_id = u.id
+        LEFT JOIN user ru ON c.reply_user_id = ru.id
+        WHERE
+            c.post_id = #{postId}
+            AND c.status = 1
+            <choose>
+                <when test="parentId == -1">
+                    AND c.parent_id > 0
+                </when>
+                <otherwise>
+                    AND c.parent_id = #{parentId}
+                </otherwise>
+            </choose>
+        ORDER BY
+            c.created_at DESC
+    </select>
+
+    <!-- 获取评论详情 -->
+    <select id="selectCommentDetail" resultType="com.community.vo.CommentVO">
+        SELECT
+            c.id,
+            c.user_id,
+            u.username,
+            u.nickname,
+            u.avatar,
+            c.post_id,
+            c.parent_id,
+            c.reply_user_id,
+            ru.username AS reply_username,
+            ru.nickname AS reply_nickname,
+            c.content,
+            c.like_count,
+            c.status,
+            c.created_at,
+            c.updated_at
+        FROM
+            comment c
+        LEFT JOIN user u ON c.user_id = u.id
+        LEFT JOIN user ru ON c.reply_user_id = ru.id
+        WHERE
+            c.id = #{id}
+    </select>
+
+</mapper>
