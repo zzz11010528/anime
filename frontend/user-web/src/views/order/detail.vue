@@ -46,133 +46,103 @@
         </el-steps>
       </el-card>
 
-      <!-- 订单信息 -->
-      <el-card class="info-card">
-        <template #header>
-          <div class="card-header">
-            <span>订单信息</span>
-          </div>
-        </template>
+      <!-- 买家信息 -->
+      <div class="section-title">买家信息</div>
+      <div class="info-table">
+        <table>
+          <tr>
+            <td class="label">买家ID</td>
+            <td class="value">{{ order.userId || '暂无' }}</td>
+          </tr>
+          <tr>
+            <td class="label">买家昵称</td>
+            <td class="value">{{ order.nickname || '暂无' }}</td>
+          </tr>
+          <tr>
+            <td class="label">收货人</td>
+            <td class="value">{{ order.shippingName || '暂无' }}</td>
+          </tr>
+          <tr>
+            <td class="label">联系电话</td>
+            <td class="value">{{ order.shippingPhone || '暂无' }}</td>
+          </tr>
+          <tr>
+            <td class="label">收货地址</td>
+            <td class="value">{{ order.shippingAddress || '暂无' }}</td>
+          </tr>
+        </table>
+      </div>
 
-        <el-descriptions :column="2" border>
-          <el-descriptions-item label="订单编号">{{ order.orderNo }}</el-descriptions-item>
-          <el-descriptions-item label="下单时间">{{ formatTime(order.createdAt) }}</el-descriptions-item>
-          <el-descriptions-item label="支付方式">{{ getPaymentMethod(order.payType) }}</el-descriptions-item>
-          <el-descriptions-item label="支付时间">{{ order.paymentTime ? formatTime(order.paymentTime) : '未支付' }}</el-descriptions-item>
-          <el-descriptions-item label="发货时间">{{ order.shippingTime ? formatTime(order.shippingTime) : '未发货' }}</el-descriptions-item>
-          <el-descriptions-item label="完成时间">{{ order.receiveTime ? formatTime(order.receiveTime) : '未完成' }}</el-descriptions-item>
-        </el-descriptions>
-      </el-card>
 
-      <!-- 收货信息 -->
-      <el-card class="address-card">
-        <template #header>
-          <div class="card-header">
-            <span>收货信息</span>
-          </div>
-        </template>
-
-        <div class="address-info">
-          <div class="info-item">
-            <span class="label">收货人：</span>
-            <span class="value">{{ order.shippingName || '暂无' }}</span>
-          </div>
-          <div class="info-item">
-            <span class="label">联系电话：</span>
-            <span class="value">{{ order.shippingPhone || '暂无' }}</span>
-          </div>
-          <div class="info-item">
-            <span class="label">收货地址：</span>
-            <span class="value">{{ order.shippingAddress || '暂无' }}</span>
-          </div>
-        </div>
-      </el-card>
 
       <!-- 商品信息 -->
-      <el-card class="product-card">
-        <template #header>
-          <div class="card-header">
-            <span>商品信息</span>
-          </div>
-        </template>
-
-        <el-table :data="order.orderItems || []" style="width: 100%">
-          <el-table-column label="商品信息" min-width="400">
-            <template #default="{ row }">
-              <div class="product-info">
-                <el-image :src="formatImageUrl(row.productImage)" :alt="row.productName" class="product-image" @click="goToProduct(row.productId)" />
-                <div class="product-details">
-                  <div class="product-name" @click="goToProduct(row.productId)">{{ row.productName }}</div>
-                  <div class="product-attrs" v-if="row.attrs">
-                    <span v-for="(attr, index) in row.attrs" :key="index">{{ attr.name }}: {{ attr.value }}</span>
-                  </div>
+      <div class="section-title">商品信息</div>
+      <div class="info-table">
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>商品信息</th>
+              <th>数量</th>
+              <th>小计</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in order.orderItems" :key="item.id">
+              <td class="product-info">
+                <div class="product-image">
+                  <img :src="formatImageUrl(item.productImage)" :alt="item.productName" @click="goToProduct(item.productId)" />
                 </div>
-              </div>
-            </template>
-          </el-table-column>
-          <el-table-column label="单价" width="120" prop="price">
-            <template #default="{ row }">¥{{ formatPrice(row.price) }}</template>
-          </el-table-column>
-          <el-table-column label="数量" width="100" prop="quantity" />
-          <el-table-column label="小计" width="120">
-            <template #default="{ row }">¥{{ formatPrice(row.price * row.quantity) }}</template>
-          </el-table-column>
-          <el-table-column label="评价状态" width="120">
-            <template #default="{ row }">
-              <el-tag v-if="row.reviewed === 1" type="success">已评价</el-tag>
-              <el-tag v-else type="info">未评价</el-tag>
-            </template>
-          </el-table-column>
-        </el-table>
-      </el-card>
+                <div class="product-name">
+                  {{ item.productName }}
+                  <div class="product-price">¥{{ formatPrice(item.price) }}</div>
+                </div>
+              </td>
+              <td>{{ item.quantity }}</td>
+              <td>¥{{ formatPrice(item.totalPrice || (item.price * item.quantity)) }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-      <!-- 金额信息 -->
-      <el-card class="amount-card">
-        <template #header>
-          <div class="card-header">
-            <span>金额信息</span>
-          </div>
-        </template>
-
-        <div class="amount-info">
-          <div class="info-item">
-            <span class="label">商品总额：</span>
-            <span class="value">¥{{ formatPrice(order.totalAmount) }}</span>
-          </div>
-          <div class="info-item">
-            <span class="label">运费：</span>
-            <span class="value">¥{{ formatPrice(0) }}</span>
-          </div>
-          <div class="info-item">
-            <span class="label">优惠金额：</span>
-            <span class="value">-¥{{ formatPrice(0) }}</span>
-          </div>
-          <div class="info-item total">
-            <span class="label">实付金额：</span>
-            <span class="value price">¥{{ formatPrice(order.payAmount) }}</span>
-          </div>
-        </div>
-      </el-card>
+      <!-- 支付信息 -->
+      <div class="section-title">支付信息</div>
+      <div class="info-table">
+        <table>
+          <tr>
+            <td class="label">商品总额</td>
+            <td class="value">¥{{ formatPrice(order.totalAmount) }}</td>
+          </tr>
+          <tr>
+            <td class="label">运费</td>
+            <td class="value">¥{{ formatPrice(0) }}</td>
+          </tr>
+          <tr>
+            <td class="label">实付金额</td>
+            <td class="value price-value">¥{{ formatPrice(order.payAmount || order.totalAmount) }}</td>
+          </tr>
+          <tr>
+            <td class="label">支付方式</td>
+            <td class="value">{{ getPaymentMethod(order.payType) }}</td>
+          </tr>
+        </table>
+      </div>
 
       <!-- 物流信息 -->
-      <el-card class="logistics-card" v-if="order.status >= 2">
-        <template #header>
-          <div class="card-header">
-            <span>物流信息</span>
-          </div>
-        </template>
-
-        <div class="logistics-info">
-          <div class="info-item">
-            <span class="label">物流公司：</span>
-            <span class="value">{{ order.shippingCompany || '暂无' }}</span>
-          </div>
-          <div class="info-item">
-            <span class="label">物流单号：</span>
-            <span class="value">{{ order.trackingNumber || '暂无' }}</span>
-            <el-button v-if="order.trackingNumber" type="primary" link @click="trackLogistics">查看物流</el-button>
-          </div>
-        </div>
+      <div v-if="order.status >= 2" class="section-title">物流信息</div>
+      <div v-if="order.status >= 2" class="info-table">
+        <table>
+          <tr>
+            <td class="label">物流公司</td>
+            <td class="value">{{ order.shippingCompany || '暂无' }}</td>
+          </tr>
+          <tr>
+            <td class="label">物流单号</td>
+            <td class="value">
+              {{ order.trackingNumber || '暂无' }}
+              <el-button v-if="order.trackingNumber" type="primary" link @click="trackLogistics">查看物流</el-button>
+            </td>
+          </tr>
+        </table>
 
         <div class="logistics-timeline" v-if="logistics.length > 0">
           <el-timeline>
@@ -186,7 +156,7 @@
             </el-timeline-item>
           </el-timeline>
         </div>
-      </el-card>
+      </div>
     </template>
 
     <!-- 评价对话框 -->
@@ -282,7 +252,7 @@ const isReviewMode = computed(() => route.query.review === 'true')
 
 // 判断是否所有商品都已评价
 const allItemsReviewed = computed(() => {
-  if (!order.value.orderItems || order.value.orderItems.length === 0) {
+  if (!order.value.orderItems || !Array.isArray(order.value.orderItems) || order.value.orderItems.length === 0) {
     return false
   }
   return order.value.orderItems.every(item => item.reviewed === 1)
@@ -290,7 +260,7 @@ const allItemsReviewed = computed(() => {
 
 // 获取未评价的商品列表
 const unreviewedItems = computed(() => {
-  if (!order.value.orderItems) {
+  if (!order.value.orderItems || !Array.isArray(order.value.orderItems)) {
     return []
   }
   return order.value.orderItems.filter(item => item.reviewed !== 1)
@@ -304,12 +274,44 @@ async function fetchOrderDetail() {
     const res = await getOrderDetail(orderId)
     order.value = res.data
 
+    // 确保订单数据的完整性
+    if (order.value) {
+      console.log('订单详情:', order.value)
+
+      // 确保金额字段有正确的值
+      if (order.value.totalAmount === null || order.value.totalAmount === undefined) {
+        // 如果总金额为空，尝试从订单项计算
+        if (order.value.orderItems && Array.isArray(order.value.orderItems)) {
+          order.value.totalAmount = order.value.orderItems.reduce((sum, item) => {
+            return sum + (item.price || 0) * (item.quantity || 1)
+          }, 0)
+        } else {
+          order.value.totalAmount = 0
+        }
+      }
+
+      // 确保支付金额有正确的值
+      if (order.value.payAmount === null || order.value.payAmount === undefined || order.value.payAmount === 0) {
+        // 如果订单已支付（状态为1或以上），但支付金额为0，则使用总金额
+        if (order.value.status >= 1) {
+          order.value.payAmount = order.value.totalAmount
+        } else {
+          order.value.payAmount = order.value.totalAmount
+        }
+      }
+    }
+
     // 初始化评价数据
-    if (order.value.orderItems) {
+    if (order.value.orderItems && Array.isArray(order.value.orderItems)) {
       order.value.orderItems.forEach(item => {
         item.rating = 5
         item.reviewContent = ''
         item.reviewImages = []
+
+        // 确保数值字段有正确的值
+        if (item.quantity === null || item.quantity === undefined) item.quantity = 1
+        if (item.price === null || item.price === undefined) item.price = 0
+        if (item.totalPrice === null || item.totalPrice === undefined) item.totalPrice = item.price * item.quantity
       })
     }
 
@@ -415,10 +417,17 @@ function formatPrice(price) {
 
 // 格式化时间
 function formatTime(time) {
-  if (!time) return ''
+  if (!time) return '暂无'
 
-  const date = new Date(time)
-  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`
+  try {
+    const date = new Date(time)
+    if (isNaN(date.getTime())) return '时间格式错误'
+
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`
+  } catch (error) {
+    console.error('时间格式化错误:', error, time)
+    return '时间格式错误'
+  }
 }
 
 // 跳转到商品详情
@@ -652,7 +661,86 @@ onMounted(() => {
     text-align: center;
   }
 
+  .section-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    padding: 10px;
+    background-color: #f5f7fa;
+    border-left: 4px solid #409eff;
+  }
+
+  .info-table {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ebeef5;
+      }
+
+      th {
+        background-color: #f5f7fa;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      .label {
+        width: 120px;
+        color: #606266;
+        background-color: #f5f7fa;
+      }
+
+      .value {
+        color: #303133;
+      }
+
+      .price-value {
+        color: #f56c6c;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    .product-table {
+      .product-info {
+        display: flex;
+        align-items: center;
+
+        .product-image {
+          width: 80px;
+          height: 80px;
+          margin-right: 10px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+        }
+
+        .product-name {
+          flex: 1;
+
+          .product-price {
+            color: #f56c6c;
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+  }
+
   .status-card,
+  .buyer-card,
   .info-card,
   .address-card,
   .product-card,
@@ -682,6 +770,7 @@ onMounted(() => {
       }
     }
 
+    .buyer-info,
     .address-info,
     .amount-info,
     .logistics-info {

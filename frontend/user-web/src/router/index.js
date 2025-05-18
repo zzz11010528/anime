@@ -117,6 +117,36 @@ const router = createRouter({
           name: 'payment-result',
           component: () => import('../views/payment/result.vue'),
           meta: { title: '支付结果', requiresAuth: false }
+        },
+        {
+          path: 'my-products',
+          name: 'my-products',
+          component: () => import('../views/my-products/list.vue'),
+          meta: { title: '我的商品', requiresAuth: true }
+        },
+        {
+          path: 'my-products/add',
+          name: 'product-add',
+          component: () => import('../views/my-products/form.vue'),
+          meta: { title: '添加商品', requiresAuth: true }
+        },
+        {
+          path: 'my-products/edit/:id',
+          name: 'product-edit',
+          component: () => import('../views/my-products/form.vue'),
+          meta: { title: '编辑商品', requiresAuth: true }
+        },
+        {
+          path: 'seller-orders',
+          name: 'seller-orders',
+          component: () => import('../views/seller-orders/list.vue'),
+          meta: { title: '卖家订单', requiresAuth: true }
+        },
+        {
+          path: 'seller-orders/:id',
+          name: 'seller-order-detail',
+          component: () => import('../views/seller-orders/detail.vue'),
+          meta: { title: '订单详情', requiresAuth: true }
         }
       ]
     },

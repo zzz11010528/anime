@@ -47,12 +47,12 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
         // 设置商品状态
         if (user.getRole() == 1) {
-            // 商家直接上架
+            // 商家直接上架，并标记为认证商家
             product.setStatus(1);
             product.setIsCertified(1);
         } else {
-            // 普通用户需要审核
-            product.setStatus(2);
+            // 普通用户也直接上架，但标记为非认证商家
+            product.setStatus(1);
             product.setIsCertified(0);
         }
 

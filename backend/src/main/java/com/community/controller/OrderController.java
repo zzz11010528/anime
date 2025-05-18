@@ -62,7 +62,7 @@ public class OrderController {
     }
 
     /**
-     * 发货（商家接口）
+     * 发货（卖家接口 - 允许普通用户和商家发货）
      */
     @PostMapping("/ship")
     public R<Void> ship(@RequestParam Long id) {
@@ -73,8 +73,14 @@ public class OrderController {
         }
 
         Long userId = StpUtil.getLoginIdAsLong();
+        // 允许订单的卖家（无论是普通用户还是商家）或管理员发货
         if (!order.getSellerId().equals(userId) && !StpUtil.hasRole("admin")) {
             return R.failed("无权操作");
+        }
+
+        // 校验订单状态
+        if (order.getStatus() != 1) {
+            return R.failed("订单状态不允许发货");
         }
 
         // 直接更新订单状态为待收货
@@ -173,7 +179,7 @@ public class OrderController {
     }
 
     /**
-     * 获取商家订单列表（商家接口）
+     * 获取卖家订单列表（允许普通用户和商家查看自己作为卖家的订单）
      */
     @GetMapping("/seller/list")
     public R<Page<OrderVO>> getSellerOrders(@RequestParam(required = false) String orderNo,
@@ -185,11 +191,7 @@ public class OrderController {
                                             @RequestParam(required = false) BigDecimal maxAmount,
                                             @RequestParam(defaultValue = "1") Integer page,
                                             @RequestParam(defaultValue = "10") Integer size) {
-        // 校验是否是商家
-        if (!StpUtil.hasRole("merchant") && !StpUtil.hasRole("admin")) {
-            return R.failed("无权操作");
-        }
-
+        // 获取当前登录用户ID作为卖家ID
         Long sellerId = StpUtil.getLoginIdAsLong();
         return R.ok(orderService.getSellerOrdersWithFilter(sellerId, orderNo, customerInfo, status,
                                                           startDate, endDate, minAmount, maxAmount, page, size));

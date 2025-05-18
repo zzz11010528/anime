@@ -93,7 +93,12 @@
 
             <div class="product-quantity">
               <span class="label">数量：</span>
-              <el-input-number v-model="quantity" :min="1" :max="product.stock" />
+              <el-input-number
+                v-model="quantity"
+                :min="1"
+                :max="product.stock > 0 ? product.stock : 1"
+                :disabled="product.stock <= 0"
+              />
             </div>
 
             <div class="product-actions">
@@ -257,6 +262,14 @@ async function fetchProductDetail() {
     const productId = route.params.id
     const res = await getProductDetail(productId)
     product.value = res.data
+
+    // 确保库存不为负数
+    if (product.value.stock < 0) {
+      product.value.stock = 0
+    }
+
+    // 设置初始数量
+    quantity.value = 1
 
     // 获取收藏状态
     if (isLoggedIn.value) {

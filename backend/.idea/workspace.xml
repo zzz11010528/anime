@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f0940aad-e01f-4508-97e8-fb4d7e1727ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/config/SaTokenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/config/SaTokenConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/GroupBuyingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/controller/GroupBuyingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/controller/PayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/controller/PayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/impl/MerchantCertificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/service/impl/MerchantCertificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/community/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/community/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/AnimeCommunityApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/AnimeCommunityApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/common/exception/BusinessException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/common/exception/BusinessException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/common/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/common/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/common/result/IResultCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/common/result/IResultCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/common/result/R.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/common/result/R.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/common/result/ResultCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/common/result/ResultCode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/common/util/AlipayUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/common/util/AlipayUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/common/util/FileUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/common/util/FileUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/config/MyMetaObjectHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/config/MyMetaObjectHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/config/MybatisPlusConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/config/MybatisPlusConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/config/RedisConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/config/RedisConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/config/SaTokenConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/config/SaTokenConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/config/ScheduleConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/config/ScheduleConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/config/StpInterfaceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/config/StpInterfaceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/config/WebMvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/config/WebMvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/config/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/config/WebSocketConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/AdminCommunityCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/AdminCommunityCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/AdminFileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/AdminFileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/AdminIpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/AdminIpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/AdminMerchantController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/AdminMerchantController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/AdminOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/AdminOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/AdminProductCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/AdminProductCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/AdminTopicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/AdminTopicController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/AdminUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/AdminUserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/CartController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/CartController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/CollectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/CollectionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/CommunityCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/CommunityCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/FileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/GestureController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/GestureController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/GroupBuyingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/GroupBuyingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/IpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/IpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/LikeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/LikeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/MerchantCertificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/MerchantCertificationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/MessageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/NotificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/NotificationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/OrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/OrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/PayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/PayController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/ProductCategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/ProductCategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/ProductController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/ProductReviewController$ReviewRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/ProductReviewController$ReviewRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/ProductReviewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/ProductReviewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/StatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/StatController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/TopicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/TopicController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/UserCertificationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/UserCertificationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/UserGroupBuyingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/UserGroupBuyingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/UserOrderController$DirectOrderRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/UserOrderController$DirectOrderRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/UserOrderController$PayRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/UserOrderController$PayRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/UserOrderController$RefundRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/UserOrderController$RefundRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/UserOrderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/UserOrderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/controller/UserProfileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/controller/UserProfileController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Cart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Comment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/CommunityCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/CommunityCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/GroupBuying.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/GroupBuying.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/GroupOrder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/GroupOrder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Ip.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Ip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Like.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Like.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/MerchantCertification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/MerchantCertification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/OrderItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Payment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Post.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/PostImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/PostImage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/PostTopic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/PostTopic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/ProductCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/ProductCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/ProductDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/ProductDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/ProductImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/ProductImage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/ProductReview.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/ProductReview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/ProductReviewImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/ProductReviewImage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Refund.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Refund.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/Topic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/Topic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/entity/UserCollection.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/entity/UserCollection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/event/CommentEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/event/CommentEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/event/LikeEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/event/LikeEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/event/MessageEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/event/MessageEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer$GestureFeature.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer$GestureFeature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer$GestureResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer$GestureResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer$GestureType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer$GestureType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer$Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer$Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/gesture/GestureRecognizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/CartMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/CartMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/CollectionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/CollectionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/CommentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/CommunityCategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/CommunityCategoryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/GroupBuyingMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/GroupBuyingMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/GroupOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/GroupOrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/IpMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/IpMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/LikeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/LikeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/MerchantCertificationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/MerchantCertificationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/MessageMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/MessageMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/NotificationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/NotificationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/OrderItemMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/OrderItemMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/OrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/OrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/PaymentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/PaymentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/PostImageMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/PostImageMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/PostMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/PostMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/PostTopicMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/PostTopicMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductCategoryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductCategoryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductDetailMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductDetailMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductImageMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductImageMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductReviewImageMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductReviewImageMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductReviewMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/ProductReviewMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/RefundMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/RefundMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/TopicMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/TopicMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/CartService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/CartService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/CollectionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/CollectionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/CommunityCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/CommunityCategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/GestureService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/GestureService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/GroupBuyingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/GroupBuyingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/GroupOrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/GroupOrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/IpService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/IpService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/LikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/LikeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/MerchantCertificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/MerchantCertificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/MessageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/MessageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/NotificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/NotificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/OrderItemService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/OrderItemService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/PaymentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/PaymentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/PostImageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/PostImageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/PostTopicService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/PostTopicService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/ProductCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/ProductCategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/ProductReviewService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/ProductReviewService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/ProductService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/ProductService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/RefundService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/RefundService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/StatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/StatService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/TopicService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/TopicService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/CartServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/CartServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/CollectionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/CollectionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/CommunityCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/CommunityCategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/GestureServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/GestureServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/GestureServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/GestureServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/GroupBuyingServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/GroupBuyingServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/GroupOrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/GroupOrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/IpServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/IpServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/LikeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/LikeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/MerchantCertificationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/MerchantCertificationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/MessageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/MessageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/NotificationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/NotificationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/OrderItemServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/OrderItemServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/OrderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/PaymentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/PaymentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/PostImageServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/PostImageServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/PostServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/PostServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/PostTopicServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/PostTopicServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/ProductCategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/ProductCategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/ProductReviewServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/ProductReviewServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/ProductServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/ProductServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/RefundServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/RefundServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/StatServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/StatServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/TopicServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/TopicServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/task/GroupBuyingTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/task/GroupBuyingTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/CartVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/CartVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/CommentVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/CommentVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/GroupBuyingVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/GroupBuyingVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/GroupOrderVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/GroupOrderVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/LikeVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/LikeVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/MerchantCertificationVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/MerchantCertificationVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/MerchantVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/MerchantVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/MessageVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/MessageVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/NotificationVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/NotificationVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/OrderVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/OrderVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/PostVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/PostVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/ProductCategoryVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/ProductCategoryVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/ProductReviewVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/ProductReviewVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/ProductStatVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/ProductStatVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/ProductVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/ProductVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/vo/UserProfileVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/vo/UserProfileVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/community/websocket/WebSocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/community/websocket/WebSocketServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/admin-web.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-35SZI37K.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-35SZI37K.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-3AVQUATN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-3AVQUATN.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-6XTJEGPY.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-6XTJEGPY.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-E3EZTAYO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-E3EZTAYO.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-EIESA7B4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-EIESA7B4.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-HRDMF5BM.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-HRDMF5BM.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-IBA734SI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-IBA734SI.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-KI5ILUMY.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-KI5ILUMY.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-PDMGT3TY.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-PDMGT3TY.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-PO77RWTX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-PO77RWTX.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-TLWNAKHH.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/chunk-TLWNAKHH.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_avatar_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_avatar_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_base_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_base_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_breadcrumb-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_breadcrumb-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_breadcrumb_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_breadcrumb_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_button_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_button_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_card_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_card_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_col_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_col_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_date-picker_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_date-picker_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_descriptions-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_descriptions-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_descriptions_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_descriptions_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_dialog_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_dialog_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_dropdown-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_dropdown-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_dropdown-menu_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_dropdown-menu_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_dropdown_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_dropdown_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_form-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_form-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_form_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_form_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_icon_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_icon_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_image_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_image_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_input-number_style_css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_input_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_input_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_loading_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_loading_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_menu-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_menu-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_menu_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_menu_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_option_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_option_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_pagination_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_pagination_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_radio-group_style_css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_radio_style_css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_rate_style_css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_row_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_row_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_scrollbar_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_scrollbar_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_select_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_select_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_sub-menu_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_sub-menu_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_switch_style_css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_table-column_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_table-column_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_table_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_table_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_tag_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_tag_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_tooltip_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_tooltip_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/admin-web/node_modules/.vite/deps/element-plus_es_components_upload_style_css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/merchant-web.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-7UM7BJCZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-7UM7BJCZ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-7Z6ZYZ6J.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-7Z6ZYZ6J.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-CQCAYRRG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-CQCAYRRG.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-DLBVW7N7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-DLBVW7N7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-IDFKMLN2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-IDFKMLN2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-IGS5VOBS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-IGS5VOBS.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-MNPQSW36.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-MNPQSW36.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-PBQOB5CZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-PBQOB5CZ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-QVSORGDL.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-QVSORGDL.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-WBX2GNYX.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-WBX2GNYX.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-XN3YX6WS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-XN3YX6WS.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-XSN3TK6A.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/chunk-XSN3TK6A.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_alert_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_alert_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_avatar_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_avatar_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_badge_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_badge_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_base_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_base_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_breadcrumb-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_breadcrumb-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_breadcrumb_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_breadcrumb_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_button_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_button_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_card_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_card_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_cascader_style_css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_col_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_col_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_date-picker_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_date-picker_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_descriptions-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_descriptions-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_descriptions_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_descriptions_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_dialog_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_dialog_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_dropdown-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_dropdown-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_dropdown-menu_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_dropdown-menu_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_dropdown_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_dropdown_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_empty_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_empty_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_form-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_form-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_form_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_form_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_icon_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_icon_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_image_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_image_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_input-number_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_input-number_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_input_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_input_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_loading_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_loading_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_menu-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_menu-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_menu_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_menu_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_option_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_option_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_pagination_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_pagination_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_popconfirm_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_popconfirm_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_radio-button_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_radio-button_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_radio-group_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_radio-group_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_radio_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_radio_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_row_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_row_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_scrollbar_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_scrollbar_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_select_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_select_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_skeleton_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_skeleton_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_sub-menu_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_sub-menu_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_tab-pane_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_tab-pane_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_table-column_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_table-column_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_table_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_table_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_tabs_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_tabs_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_tag_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_tag_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_tooltip_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_tooltip_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_upload_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/merchant-web/node_modules/.vite/deps/element-plus_es_components_upload_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-2V5Z6YYT.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-2V5Z6YYT.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-2YA2XZGO.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-2YA2XZGO.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-GVAUIUTJ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-GVAUIUTJ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-KGUS3NXH.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-KGUS3NXH.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-KMC4G6J6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-KMC4G6J6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-NQHVNSKN.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-NQHVNSKN.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-YPIMHWOZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-YPIMHWOZ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-Z2OY6LHC.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-Z2OY6LHC.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-ZJHVLZEZ.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-ZJHVLZEZ.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-ZMOVT7AE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/chunk-ZMOVT7AE.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_avatar_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_avatar_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_badge_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_badge_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_base_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_base_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_button_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_button_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_card_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_card_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_carousel-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_carousel-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_carousel_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_carousel_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_col_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_col_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_dialog_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_dialog_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_dropdown-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_dropdown-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_dropdown-menu_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_dropdown-menu_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_dropdown_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_dropdown_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_empty_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_empty_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_form-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_form-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_form_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_form_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_icon_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_icon_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_image_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_image_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_input_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_input_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_menu-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_menu-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_menu_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_menu_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_menu_style_css.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_menu_style_css.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_option_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_option_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_pagination_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_pagination_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_row_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_row_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_select_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_select_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_skeleton-item_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_skeleton-item_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_skeleton_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_skeleton_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_switch_style_css.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_switch_style_css.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_tag_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_tag_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_upload_style_css.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/node_modules/.vite/deps/element-plus_es_components_upload_style_css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/src/views/order/detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/src/views/order/detail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/src/views/product/detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/src/views/product/detail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/user-web/src/views/profile/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/user-web/src/views/profile/index.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2xBH7zEBUoZQYqbiF02cgCQiqJZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "spring.configuration.checksum": "24e5f77d447fe8e1c4102ef31bd1b5ce"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="AnimeCommunityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="anime-community" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.community.AnimeCommunityApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.community.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.AnimeCommunityApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f0940aad-e01f-4508-97e8-fb4d7e1727ea" name="Changes" comment="" />
+      <created>1747404387899</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747404387899</updated>
+      <workItem from="1747404390061" duration="835000" />
+      <workItem from="1747486203280" duration="1380000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

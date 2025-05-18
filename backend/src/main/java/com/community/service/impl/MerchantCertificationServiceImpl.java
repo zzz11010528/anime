@@ -31,6 +31,7 @@ public class MerchantCertificationServiceImpl extends ServiceImpl<MerchantCertif
     private final UserService userService;
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean apply(MerchantCertification certification) {
         // 校验用户是否存在
         User user = userService.getById(certification.getUserId());
@@ -45,6 +46,20 @@ public class MerchantCertificationServiceImpl extends ServiceImpl<MerchantCertif
                 throw new BusinessException("您已提交认证申请，请等待审核");
             } else if (existCertification.getCertificationStatus() == 1) {
                 throw new BusinessException("您已通过认证，无需重复申请");
+            } else if (existCertification.getCertificationStatus() == 2) {
+                // 如果之前的认证被拒绝，则更新现有记录而不是创建新记录
+                // 复制新提交的认证信息到现有记录
+                existCertification.setCompanyName(certification.getCompanyName());
+                existCertification.setBusinessLicense(certification.getBusinessLicense());
+                existCertification.setContactName(certification.getContactName());
+                existCertification.setContactPhone(certification.getContactPhone());
+                existCertification.setContactEmail(certification.getContactEmail());
+                // 重置认证状态为审核中
+                existCertification.setCertificationStatus(0);
+                // 清空拒绝原因
+                existCertification.setRejectReason(null);
+
+                return updateById(existCertification);
             }
         }
 

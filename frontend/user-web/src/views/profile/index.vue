@@ -238,6 +238,176 @@
           </div>
         </el-tab-pane>
 
+        <el-tab-pane label="我的商品" name="product">
+          <div class="my-products">
+            <div class="action-bar">
+              <el-button type="primary" @click="goToAddProduct">发布新商品</el-button>
+            </div>
+            <div v-if="myProducts.length > 0">
+              <el-table :data="myProducts" border style="width: 100%">
+                <el-table-column label="商品信息" min-width="300">
+                  <template #default="scope">
+                    <div class="product-info">
+                      <el-image
+                        :src="formatImageUrl(scope.row.mainImage)"
+                        class="product-image"
+                        fit="cover"
+                      />
+                      <div class="product-detail">
+                        <div class="product-name">{{ scope.row.name }}</div>
+                        <div class="product-price">
+                          <span class="price">¥{{ formatPrice(scope.row.price) }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </el-table-column>
+                <el-table-column prop="stock" label="库存" width="80" />
+                <el-table-column prop="sales" label="销量" width="80" />
+                <el-table-column label="状态" width="100">
+                  <template #default="scope">
+                    <el-tag :type="getProductStatusType(scope.row.status)">
+                      {{ getProductStatusText(scope.row.status) }}
+                    </el-tag>
+                  </template>
+                </el-table-column>
+                <el-table-column label="创建时间" width="180">
+                  <template #default="scope">
+                    {{ formatDateTime(scope.row.createdAt) }}
+                  </template>
+                </el-table-column>
+                <el-table-column label="操作" width="200">
+                  <template #default="scope">
+                    <el-button type="primary" link @click="viewProduct(scope.row.id)">查看</el-button>
+                    <el-button type="success" link @click="editProduct(scope.row.id)">编辑</el-button>
+                    <el-button
+                      :type="scope.row.status === 1 ? 'warning' : 'success'"
+                      link
+                      @click="toggleProductStatus(scope.row)"
+                    >
+                      {{ scope.row.status === 1 ? '下架' : '上架' }}
+                    </el-button>
+                  </template>
+                </el-table-column>
+              </el-table>
+              <div class="pagination">
+                <el-pagination
+                  v-model:current-page="myProductPage"
+                  v-model:page-size="myProductSize"
+                  :page-sizes="[5, 10, 20]"
+                  layout="total, sizes, prev, pager, next, jumper"
+                  :total="myProductTotal"
+                  @size-change="handleMyProductSizeChange"
+                  @current-change="handleMyProductCurrentChange"
+                />
+              </div>
+            </div>
+            <el-empty v-else description="暂无发布的商品" />
+          </div>
+        </el-tab-pane>
+
+        <el-tab-pane label="卖家订单" name="seller-order">
+          <div class="seller-orders">
+            <div class="order-filter">
+              <el-form :inline="true" :model="sellerOrderSearchForm" class="search-form">
+                <el-form-item label="订单编号">
+                  <el-input v-model="sellerOrderSearchForm.orderNo" placeholder="请输入订单编号" clearable></el-input>
+                </el-form-item>
+                <el-form-item label="订单状态">
+                  <el-select v-model="sellerOrderSearchForm.status" placeholder="请选择状态" clearable>
+                    <el-option label="全部" value=""></el-option>
+                    <el-option label="待付款" :value="0"></el-option>
+                    <el-option label="待发货" :value="1"></el-option>
+                    <el-option label="待收货" :value="2"></el-option>
+                    <el-option label="已完成" :value="3"></el-option>
+                    <el-option label="已取消" :value="4"></el-option>
+                    <el-option label="退款中" :value="5"></el-option>
+                    <el-option label="已退款" :value="6"></el-option>
+                  </el-select>
+                </el-form-item>
+                <el-form-item>
+                  <el-button type="primary" @click="searchSellerOrders">搜索</el-button>
+                  <el-button @click="resetSellerOrderSearch">重置</el-button>
+                </el-form-item>
+              </el-form>
+            </div>
+
+            <div v-if="sellerOrders.length > 0" class="order-list">
+              <div v-for="order in sellerOrders" :key="order.id" class="order-card">
+                <div class="order-header">
+                  <div class="order-info">
+                    <span class="order-time">{{ formatDateTime(order.createdAt) }}</span>
+                    <span class="order-no">订单号：{{ order.orderNo }}</span>
+                  </div>
+                  <div class="order-status">
+                    <el-tag :type="getOrderStatusType(order.status)">
+                      {{ getOrderStatusText(order.status) }}
+                    </el-tag>
+                  </div>
+                </div>
+
+                <div class="order-content">
+                  <div v-if="order.orderItems && order.orderItems.length > 0" class="order-items">
+                    <div v-for="item in order.orderItems" :key="item.id" class="order-item">
+                      <div class="item-image">
+                        <el-image
+                          :src="formatImageUrl(item.productImage)"
+                          fit="cover"
+                          @click="viewProduct(item.productId)"
+                        />
+                      </div>
+                      <div class="item-info">
+                        <div class="item-name" @click="viewProduct(item.productId)">{{ item.productName }}</div>
+                        <div class="item-price">¥{{ formatPrice(item.price) }}</div>
+                      </div>
+                      <div class="item-quantity">x{{ item.quantity }}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="order-footer">
+                  <div class="order-amount">
+                    <span>共{{ getTotalQuantity(order.orderItems) }}件商品，实付：</span>
+                    <span class="amount">¥{{ formatPrice(order.totalAmount) }}</span>
+                  </div>
+                  <div class="order-actions">
+                    <el-button type="primary" size="small" @click="viewSellerOrder(order.id)">查看详情</el-button>
+                    <el-button
+                      v-if="order.status === 1"
+                      type="success"
+                      size="small"
+                      @click="handleShipOrder(order.id)"
+                    >
+                      发货
+                    </el-button>
+                    <el-button
+                      v-if="order.status === 5"
+                      type="danger"
+                      size="small"
+                      @click="handleRefundOrder(order.id)"
+                    >
+                      处理退款
+                    </el-button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pagination">
+                <el-pagination
+                  v-model:current-page="sellerOrderPage"
+                  v-model:page-size="sellerOrderSize"
+                  :page-sizes="[5, 10, 20]"
+                  layout="total, sizes, prev, pager, next, jumper"
+                  :total="sellerOrderTotal"
+                  @size-change="handleSellerOrderSizeChange"
+                  @current-change="handleSellerOrderCurrentChange"
+                />
+              </div>
+            </div>
+            <el-empty v-else description="暂无卖家订单" />
+          </div>
+        </el-tab-pane>
+
         <el-tab-pane label="我的拼团" name="group">
           <div class="group-tabs">
             <el-tabs v-model="groupTab">
@@ -364,12 +534,13 @@
 
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '../../stores/user'
 import { updateUserInfo, uploadAvatar, changePassword as apiChangePassword } from '../../api/user'
 import { getUserPosts, getUserComments, getUserLikes } from '../../api/community'
 import { getUserGroupOrders } from '../../api/group'
+import { getMyProducts, updateProductStatus, getSellerOrders, shipOrder, handleRefund } from '../../api/seller'
 import request from '../../utils/request'
 import ProductCard from '../../components/ProductCard.vue'
 import PostCard from '../../components/PostCard.vue'
@@ -389,6 +560,22 @@ const profileFormRef = ref(null)
 const passwordFormRef = ref(null)
 const loading = ref(false)
 const passwordLoading = ref(false)
+
+// 我的商品
+const myProducts = ref([])
+const myProductPage = ref(1)
+const myProductSize = ref(10)
+const myProductTotal = ref(0)
+
+// 卖家订单
+const sellerOrders = ref([])
+const sellerOrderPage = ref(1)
+const sellerOrderSize = ref(10)
+const sellerOrderTotal = ref(0)
+const sellerOrderSearchForm = reactive({
+  orderNo: '',
+  status: ''
+})
 
 // 个人资料表单
 const userInfo = computed(() => userStore.userInfo)
@@ -902,6 +1089,233 @@ function handleGroupedCurrentChange() {
   fetchMyGroupedOrders()
 }
 
+// 商品状态文本和类型
+function getProductStatusText(status) {
+  switch (status) {
+    case 0: return '下架'
+    case 1: return '上架'
+    case 2: return '审核中'
+    case 3: return '审核失败'
+    case -1: return '已删除'
+    default: return '未知'
+  }
+}
+
+function getProductStatusType(status) {
+  switch (status) {
+    case 0: return 'info'
+    case 1: return 'success'
+    case 2: return 'warning'
+    case 3: return 'danger'
+    case -1: return 'danger'
+    default: return 'info'
+  }
+}
+
+// 订单状态文本和类型
+function getOrderStatusText(status) {
+  switch (status) {
+    case 0: return '待付款'
+    case 1: return '待发货'
+    case 2: return '待收货'
+    case 3: return '已完成'
+    case 4: return '已取消'
+    case 5: return '退款中'
+    case 6: return '已退款'
+    case 7: return '退款拒绝'
+    default: return '未知'
+  }
+}
+
+function getOrderStatusType(status) {
+  switch (status) {
+    case 0: return 'warning'
+    case 1: return 'primary'
+    case 2: return 'success'
+    case 3: return 'success'
+    case 4: return 'info'
+    case 5: return 'danger'
+    case 6: return 'info'
+    case 7: return 'danger'
+    default: return 'info'
+  }
+}
+
+// 获取我的商品
+async function fetchMyProducts() {
+  try {
+    const res = await getMyProducts({
+      page: myProductPage.value,
+      size: myProductSize.value
+    })
+
+    if (res.data) {
+      myProducts.value = res.data.records || []
+      myProductTotal.value = res.data.total || 0
+    }
+  } catch (error) {
+    console.error('获取我的商品失败:', error)
+    myProducts.value = []
+    myProductTotal.value = 0
+  }
+}
+
+// 商品分页处理
+function handleMyProductSizeChange() {
+  fetchMyProducts()
+}
+
+function handleMyProductCurrentChange() {
+  fetchMyProducts()
+}
+
+// 商品操作
+function goToAddProduct() {
+  router.push('/my-products/add')
+}
+
+function viewProduct(id) {
+  router.push(`/product/${id}`)
+}
+
+function editProduct(id) {
+  router.push(`/my-products/edit/${id}`)
+}
+
+async function toggleProductStatus(product) {
+  try {
+    const newStatus = product.status === 1 ? 0 : 1
+    await updateProductStatus(product.id, newStatus)
+    ElMessage.success(newStatus === 1 ? '商品已上架' : '商品已下架')
+    fetchMyProducts()
+  } catch (error) {
+    console.error('更新商品状态失败:', error)
+    ElMessage.error('操作失败，请重试')
+  }
+}
+
+// 获取卖家订单
+async function fetchSellerOrders() {
+  try {
+    const res = await getSellerOrders({
+      page: sellerOrderPage.value,
+      size: sellerOrderSize.value,
+      orderNo: sellerOrderSearchForm.orderNo,
+      status: sellerOrderSearchForm.status
+    })
+
+    if (res.data) {
+      sellerOrders.value = res.data.records || []
+      sellerOrderTotal.value = res.data.total || 0
+    }
+  } catch (error) {
+    console.error('获取卖家订单失败:', error)
+    sellerOrders.value = []
+    sellerOrderTotal.value = 0
+  }
+}
+
+// 搜索卖家订单
+function searchSellerOrders() {
+  sellerOrderPage.value = 1
+  fetchSellerOrders()
+}
+
+// 重置卖家订单搜索
+function resetSellerOrderSearch() {
+  sellerOrderSearchForm.orderNo = ''
+  sellerOrderSearchForm.status = ''
+  sellerOrderPage.value = 1
+  fetchSellerOrders()
+}
+
+// 计算订单商品总数量
+function getTotalQuantity(items) {
+  if (!items || !Array.isArray(items)) return 0
+  return items.reduce((sum, item) => sum + (item.quantity || 0), 0)
+}
+
+// 卖家订单分页处理
+function handleSellerOrderSizeChange() {
+  fetchSellerOrders()
+}
+
+function handleSellerOrderCurrentChange() {
+  fetchSellerOrders()
+}
+
+// 卖家订单操作
+function viewSellerOrder(id) {
+  router.push(`/seller-orders/${id}`)
+}
+
+async function handleShipOrder(id) {
+  try {
+    await ElMessageBox.confirm('确认发货该订单?', '提示', {
+      confirmButtonText: '确认',
+      cancelButtonText: '取消',
+      type: 'warning'
+    })
+
+    await shipOrder(id)
+    ElMessage.success('发货成功')
+    fetchSellerOrders()
+  } catch (error) {
+    if (error !== 'cancel') {
+      console.error('发货失败:', error)
+      ElMessage.error('发货失败，请重试')
+    }
+  }
+}
+
+async function handleRefundOrder(id) {
+  try {
+    const { value: action } = await ElMessageBox.prompt(
+      '请输入拒绝原因（同意退款可不填）',
+      '处理退款申请',
+      {
+        confirmButtonText: '同意退款',
+        cancelButtonText: '拒绝退款',
+        inputPlaceholder: '拒绝原因...',
+        showCancelButton: true,
+        distinguishCancelAndClose: true
+      }
+    )
+
+    // 同意退款
+    await handleRefund(id, 1)
+    ElMessage.success('已同意退款')
+    fetchSellerOrders()
+  } catch (error) {
+    if (error === 'cancel') {
+      // 用户点击了"拒绝退款"
+      const { value: reason } = await ElMessageBox.prompt(
+        '请输入拒绝原因',
+        '拒绝退款',
+        {
+          confirmButtonText: '确认',
+          cancelButtonText: '取消',
+          inputValidator: (value) => {
+            if (!value) {
+              return '拒绝原因不能为空'
+            }
+            return true
+          }
+        }
+      )
+
+      if (reason) {
+        await handleRefund(id, 2, reason)
+        ElMessage.success('已拒绝退款')
+        fetchSellerOrders()
+      }
+    } else if (error !== 'close') {
+      console.error('处理退款失败:', error)
+      ElMessage.error('处理退款失败，请重试')
+    }
+  }
+}
+
 // 生命周期钩子
 onMounted(() => {
   initProfileForm()
@@ -913,6 +1327,8 @@ onMounted(() => {
   fetchMyLikedComments()
   fetchMyGroupingOrders()
   fetchMyGroupedOrders()
+  fetchMyProducts()
+  fetchSellerOrders()
 })
 </script>
 
@@ -960,9 +1376,138 @@ onMounted(() => {
     .my-posts,
     .my-comments,
     .my-likes,
-    .my-groups {
+    .my-groups,
+    .my-products {
       .collection-list {
         margin-top: 20px;
+      }
+
+      .pagination {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .action-bar {
+        margin-bottom: 20px;
+      }
+    }
+
+    .seller-orders {
+      .order-filter {
+        margin-bottom: 20px;
+      }
+
+      .order-list {
+        .order-card {
+          background-color: #fff;
+          border-radius: 4px;
+          border: 1px solid #ebeef5;
+          margin-bottom: 15px;
+          box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
+
+          .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #ebeef5;
+            background-color: #f5f7fa;
+
+            .order-info {
+              .order-time {
+                color: #606266;
+                margin-right: 15px;
+              }
+
+              .order-no {
+                color: #303133;
+                font-weight: bold;
+              }
+            }
+          }
+
+          .order-content {
+            padding: 15px;
+
+            .order-items {
+              .order-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                padding-bottom: 10px;
+                border-bottom: 1px dashed #ebeef5;
+
+                &:last-child {
+                  margin-bottom: 0;
+                  padding-bottom: 0;
+                  border-bottom: none;
+                }
+
+                .item-image {
+                  width: 80px;
+                  height: 80px;
+                  margin-right: 15px;
+
+                  .el-image {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 4px;
+                    cursor: pointer;
+                  }
+                }
+
+                .item-info {
+                  flex: 1;
+
+                  .item-name {
+                    font-size: 14px;
+                    color: #303133;
+                    margin-bottom: 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                      color: #409eff;
+                    }
+                  }
+
+                  .item-price {
+                    color: #f56c6c;
+                    font-weight: bold;
+                  }
+                }
+
+                .item-quantity {
+                  color: #606266;
+                  margin-left: 15px;
+                }
+              }
+            }
+          }
+
+          .order-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-top: 1px solid #ebeef5;
+            background-color: #f5f7fa;
+
+            .order-amount {
+              color: #606266;
+
+              .amount {
+                color: #f56c6c;
+                font-size: 16px;
+                font-weight: bold;
+              }
+            }
+
+            .order-actions {
+              display: flex;
+              gap: 10px;
+            }
+          }
+        }
       }
 
       .pagination {
@@ -999,6 +1544,7 @@ onMounted(() => {
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 2;
+          line-clamp: 2;
           -webkit-box-orient: vertical;
         }
 

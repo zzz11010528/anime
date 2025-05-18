@@ -22,17 +22,18 @@ public class SaTokenConfig implements WebMvcConfigurer {
         registry.addInterceptor(new SaInterceptor(handle -> {
             // 登录校验 - 排除登录接口和文件上传接口
             SaRouter.match("/**")
-
-                    .notMatch("/user/login", "/user/register","/pay/return")
+                    .notMatch("/pay/return")
+                    .notMatch("/user/login", "/user/register")
                     .notMatch("/file/**", "/upload/**", "/swagger-ui/**", "/swagger-resources/**", "/v3/api-docs/**")
                     .check(r -> StpUtil.checkLogin());
 
             // 角色校验 - 管理员
             SaRouter.match("/admin/**", r -> StpUtil.checkRole("admin"));
 
-            // 角色校验 - 商家
+            // 角色校验 - 商家（允许普通用户访问部分商家功能）
             SaRouter.match("/merchant/**")
                    .notMatch("/merchant/certification/list", "/merchant/certification/audit")
+                   .notMatch("/merchant/product/**", "/merchant/order/**") // 允许普通用户访问商品和订单相关接口
                    .check(r -> StpUtil.checkRole("merchant"));
 
             // 角色校验 - 管理员专用接口

@@ -137,16 +137,16 @@ public class PayController {
                 }
 
                 // // 支付成功，跳转到支付结果页面
-                response.sendRedirect("http://localhost:3000/#/payment/result?orderNo=" + outTradeNo + "&status=success");
+                response.sendRedirect("http://127.0.0.1:3000/order");
             } else {
                 // 验证失败
                 System.out.println("支付宝同步回调 - 签名验证失败");
-                response.sendRedirect("http://localhost:3000/#/payment/result?status=fail");
+                response.sendRedirect("http://127.0.0.1:3000/order");
             }
         } catch (AlipayApiException e) {
             System.out.println("支付宝同步回调 - 异常: " + e.getMessage());
             e.printStackTrace();
-            response.sendRedirect("http://localhost:3000/#/payment/result?status=error");
+            response.sendRedirect("http://127.0.0.1:3000/order");
         }
     }
 }
